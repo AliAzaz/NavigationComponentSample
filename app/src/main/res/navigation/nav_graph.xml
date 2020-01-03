@@ -7,12 +7,15 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.navigationsample.MainFragment"
+        android:name="com.example.navigationsample.FirstFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment">
+        tools:layout="@layout/fragment_first">
         <action
             android:id="@+id/action_mainFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_endChatFragment"
+            app:destination="@id/endChatFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -22,5 +25,22 @@
         <action
             android:id="@+id/action_secondFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_endChatFragment"
+            app:destination="@id/endChatFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.navigationsample.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/action_registrationFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/endChatFragment"
+        android:name="com.example.navigationsample.EndChatFragment"
+        android:label="fragment_end_chat"
+        tools:layout="@layout/fragment_end_chat" />
 </navigation>

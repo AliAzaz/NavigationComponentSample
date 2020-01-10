@@ -1,4 +1,4 @@
-package com.example.navigationsample
+package com.example.navigationsample.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.example.navigationsample.R
+import com.example.navigationsample.viewModel.MainViewModel
 
 
 class FirstFragment : Fragment() {
 
     companion object {
-        fun newInstance() = FirstFragment()
+        fun newInstance() =
+            FirstFragment()
     }
 
     private lateinit var viewModel: MainViewModel

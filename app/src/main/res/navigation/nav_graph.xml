@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/registrationFragment">
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.navigationsample.FirstFragment"
+        android:name="com.example.navigationsample.fragments.FirstFragment"
         android:label="main_fragment"
         tools:layout="@layout/fragment_first">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.example.navigationsample.SecondFragment"
+        android:name="com.example.navigationsample.fragments.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second">
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.navigationsample.RegistrationFragment"
+        android:name="com.example.navigationsample.fragments.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration">
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/endChatFragment"
-        android:name="com.example.navigationsample.EndChatFragment"
+        android:name="com.example.navigationsample.fragments.EndChatFragment"
         android:label="fragment_end_chat"
         tools:layout="@layout/fragment_end_chat" />
 </navigation>

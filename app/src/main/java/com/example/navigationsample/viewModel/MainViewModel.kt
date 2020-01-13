@@ -12,6 +12,10 @@ class MainViewModel : ViewModel() {
         return user.value
     }
 
+    fun getUser(index: Int): User? {
+        return user.value?.find { it.userID == index }
+    }
+
     fun setUsers(users: List<String>) {
         for (i in users.indices)
             user.value?.toMutableList()?.map { i to User(i, users[i], mutableListOf()) }

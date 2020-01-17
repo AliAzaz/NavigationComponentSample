@@ -6,9 +6,9 @@
     app:startDestination="@id/registrationFragment">
 
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/firstFragment"
         android:name="com.example.navigationsample.fragments.FirstFragment"
-        android:label="main_fragment"
+        android:label="first_fragment"
         tools:layout="@layout/fragment_first">
         <action
             android:id="@+id/action_mainFragment_to_secondFragment"
@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_second">
         <action
             android:id="@+id/action_secondFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/firstFragment" />
         <action
             android:id="@+id/action_secondFragment_to_endChatFragment"
             app:destination="@id/endChatFragment" />
@@ -36,7 +36,7 @@
         tools:layout="@layout/fragment_registration">
         <action
             android:id="@+id/action_registrationFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/firstFragment" />
     </fragment>
     <fragment
         android:id="@+id/endChatFragment"

@@ -15,7 +15,7 @@ import com.validatorcrawler.aliazaz.Validator
 class RegistrationFragment : Fragment() {
 
     private lateinit var bi: FragmentRegistrationBinding
-    private lateinit var vModel: MainViewModel
+    lateinit var vModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

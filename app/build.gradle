@@ -49,7 +49,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     // Crawler
-    implementation 'com.github.AliAzaz:AndroidValidatorCrawler:1.0.0'
+    implementation 'com.github.AliAzaz:AndroidValidatorCrawler:1.0.1'
 
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"

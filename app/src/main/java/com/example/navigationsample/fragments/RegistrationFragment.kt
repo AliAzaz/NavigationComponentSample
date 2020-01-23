@@ -45,6 +45,5 @@ class RegistrationFragment : Fragment() {
 
         // Navigation
         findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToMainFragment())
-
     }
 }

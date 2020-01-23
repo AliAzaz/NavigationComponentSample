@@ -36,7 +36,8 @@
         tools:layout="@layout/fragment_registration">
         <action
             android:id="@+id/action_registrationFragment_to_mainFragment"
-            app:destination="@id/firstFragment" />
+            app:destination="@id/firstFragment"
+            app:popUpTo="@+id/firstFragment" />
     </fragment>
     <fragment
         android:id="@+id/endChatFragment"

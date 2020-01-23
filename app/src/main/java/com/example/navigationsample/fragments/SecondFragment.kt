@@ -31,7 +31,7 @@ class SecondFragment : Fragment() {
         bi = FragmentSecondBinding.inflate(inflater, container, false)
         bi.callback = this
 
-        bi.user02.text = vModel.getUser(1)?.username ?: ""
+        bi.user02.text = vModel.getUser(1)?.username
         /*bi.lstChatUser01.adapter = ArrayAdapter(activity,android.R.layout.simple_list_item_1,
             viewModel.getUser(0)?.msgLst
         )*/

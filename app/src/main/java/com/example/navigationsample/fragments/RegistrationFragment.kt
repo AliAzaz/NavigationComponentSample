@@ -44,6 +44,6 @@ class RegistrationFragment : Fragment() {
         vModel.setUsers(listOf(bi.fName.text.toString(), bi.sName.text.toString()))
 
         // Navigation
-        findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToMainFragment())
+        findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToFirstFragment())
     }
 }

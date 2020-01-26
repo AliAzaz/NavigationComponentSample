@@ -20,13 +20,21 @@ class MainViewModel : ViewModel() {
         val userLst = mutableListOf<User>()
         for (i in users.indices)
             userLst.add(User(i, users[i], mutableListOf()))
-        user.postValue(userLst)
+        user.value = userLst
     }
 
-    fun updateChat(singleUser: User) {
-        val lst = getUserList()?.get(singleUser.userID)
-        lst?.msgLst = singleUser.msgLst
+    fun updateChat(singleUser: User, msgLst: String) {
+        val lst = getUser(singleUser.userID)
+        lst?.let {
+            lst.msgLst.add(msgLst)
+            val mainLst = user.value
+            mainLst?.map { if (it.userID == lst.userID) lst else it }
+            user.value = mainLst
+        }
     }
 
+    fun getUserChat(singleUser: User): MutableList<String>? {
+        return getUser(singleUser.userID)?.msgLst
+    }
 
 }

@@ -9,5 +9,6 @@
     <string name="fName">First User Name</string>
     <string name="sName">Second User Name</string>
     <string name="btnStart">START</string>
+    <string name="btnEnd">End</string>
 
 </resources>

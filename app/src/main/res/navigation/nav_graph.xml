@@ -6,39 +6,42 @@
     app:startDestination="@id/registrationFragment">
 
     <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.navigationsample.fragments.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/action_registrationFragment_to_firstFragment"
+            app:destination="@id/firstFragment"
+            app:popUpTo="@+id/firstFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/firstFragment"
         android:name="com.example.navigationsample.fragments.FirstFragment"
         android:label="first_fragment"
         tools:layout="@layout/fragment_first">
         <action
-            android:id="@+id/action_mainFragment_to_secondFragment"
+            android:id="@+id/action_firstFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_endChatFragment"
+            android:id="@+id/action_firstFragment_to_endChatFragment"
             app:destination="@id/endChatFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.example.navigationsample.fragments.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second">
         <action
-            android:id="@+id/action_secondFragment_to_mainFragment"
+            android:id="@+id/action_secondFragment_to_firstFragment"
             app:destination="@id/firstFragment" />
         <action
             android:id="@+id/action_secondFragment_to_endChatFragment"
             app:destination="@id/endChatFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/registrationFragment"
-        android:name="com.example.navigationsample.fragments.RegistrationFragment"
-        android:label="fragment_registration"
-        tools:layout="@layout/fragment_registration">
-        <action
-            android:id="@+id/action_registrationFragment_to_mainFragment"
-            app:destination="@id/firstFragment"
-            app:popUpTo="@+id/firstFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/endChatFragment"
         android:name="com.example.navigationsample.fragments.EndChatFragment"

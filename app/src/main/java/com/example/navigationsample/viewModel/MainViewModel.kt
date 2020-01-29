@@ -7,6 +7,11 @@ import com.example.navigationsample.contract.User
 class MainViewModel : ViewModel() {
 
     private var user = MutableLiveData<MutableList<User>>()
+    var users_chat = MutableLiveData<MutableList<Pair<Int, String>>>()
+
+    init {
+        users_chat.value = mutableListOf()
+    }
 
     private fun getUserList(): MutableList<User>? {
         return user.value
@@ -31,10 +36,13 @@ class MainViewModel : ViewModel() {
             mainLst?.map { if (it.userID == lst.userID) lst else it }
             user.value = mainLst
         }
+
+        val messages = users_chat.value
+        messages?.add(Pair(singleUser.userID, msgLst))
+        users_chat.value = messages
     }
 
-    fun getUserChat(singleUser: User): MutableList<String>? {
-        return getUser(singleUser.userID)?.msgLst
+    fun getUserChat(index: Int): MutableList<String>? {
+        return getUser(index)?.msgLst
     }
-
 }

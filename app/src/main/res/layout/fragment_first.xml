@@ -16,8 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <ListView
-            android:id="@+id/lstChatUser01"
+            android:id="@+id/lstChatUser"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -27,7 +28,7 @@
             app:layout_constraintBottom_toTopOf="@+id/txtMessage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user01" />
+            app:layout_constraintTop_toBottomOf="@+id/user" />
 
         <EditText
             android:id="@+id/txtMessage"
@@ -53,13 +54,15 @@
             app:layout_constraintTop_toTopOf="@+id/txtMessage" />
 
         <TextView
-            android:id="@+id/user01"
+            android:id="@+id/user"
             android:text="TextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/btnEnd"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -70,9 +73,9 @@
             android:onClick="@{v -> callback.btnEnd()}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/user01"
+            app:layout_constraintBottom_toBottomOf="@+id/user"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/user01" />
+            app:layout_constraintTop_toTopOf="@+id/user" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

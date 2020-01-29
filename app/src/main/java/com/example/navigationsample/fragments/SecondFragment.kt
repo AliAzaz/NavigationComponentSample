@@ -1,7 +1,6 @@
 package com.example.navigationsample.fragments
 
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,14 +34,15 @@ class SecondFragment : Fragment() {
         bi = FragmentSecondBinding.inflate(inflater, container, false)
         bi.callback = this
 
-        user = vModel.getUser(0)
-        bi.user02.text = user?.username
-        bi.lstChatUser01.adapter =
+        user = vModel.getUser(1)
+        bi.user.text = user?.username
+        bi.lstChatUser.adapter =
             activity?.let {
                 ArrayAdapter(
                     it,
-                    R.layout.simple_list_item_1,
-                    user?.msgLst ?: listOf()
+                    android.R.layout.simple_list_item_1,
+                    vModel.users_chat.value?.map { dt -> if (dt.first == 1) "You:${dt.second}" else "He:${dt.second}" }
+                        ?: listOf()
                 )
             }
 
@@ -60,8 +60,8 @@ class SecondFragment : Fragment() {
         findNavController().navigate(SecondFragmentDirections.actionSecondFragmentToFirstFragment())
     }
 
-    fun formValidate(): Boolean {
-        return Validator.emptyCheckingContainer(layoutInflater.context, bi.fldGrpC)
+    private fun formValidate(): Boolean {
+        return Validator.emptyCheckingContainer(layoutInflater.context, bi.fldGrpB)
     }
 
     fun btnEnd() {

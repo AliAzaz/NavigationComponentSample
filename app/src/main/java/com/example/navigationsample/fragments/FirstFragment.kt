@@ -35,17 +35,22 @@ class FirstFragment : Fragment() {
         bi.callback = this
 
         user = vModel.getUser(0)
-        bi.user01.text = user?.username
-        bi.lstChatUser01.adapter =
-            activity?.let {
-                ArrayAdapter(
-                    it,
-                    android.R.layout.simple_list_item_1,
-                    user?.msgLst ?: listOf()
-                )
-            }
+        bi.user.text = user?.username
+
+        bi.lstChatUser.adapter = activity?.let {
+            ArrayAdapter(
+                it,
+                android.R.layout.simple_list_item_1,
+                vModel.users_chat.value?.map { dt -> if (dt.first == 0) "You:${dt.second}" else "He:${dt.second}" }
+                    ?: listOf()
+            )
+        }
 
         return bi.root
+    }
+
+    private fun formValidate(): Boolean {
+        return Validator.emptyCheckingContainer(layoutInflater.context, bi.fldGrpB)
     }
 
     fun btnSend() {
@@ -58,12 +63,8 @@ class FirstFragment : Fragment() {
         findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToSecondFragment())
     }
 
-    fun formValidate(): Boolean {
-        return Validator.emptyCheckingContainer(layoutInflater.context, bi.fldGrpB)
-    }
-
     fun btnEnd() {
-        findNavController().navigate(SecondFragmentDirections.actionSecondFragmentToEndChatFragment())
+        findNavController().navigate(FirstFragmentDirections.actionFirstFragmentToEndChatFragment())
     }
 
 }

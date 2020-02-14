@@ -15,6 +15,10 @@
             app:destination="@id/firstFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="welcomeFlag"
+            android:defaultValue="true"
+            app:argType="boolean" />
     </fragment>
 
     <fragment
@@ -60,6 +64,10 @@
             android:id="@+id/action_endChatFragment_to_registrationFragment"
             app:destination="@id/registrationFragment"
             app:popUpTo="@id/nav_graph"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true">
+            <argument
+                android:name="welcomeFlag"
+                android:defaultValue="false" />
+        </action>
     </fragment>
 </navigation>

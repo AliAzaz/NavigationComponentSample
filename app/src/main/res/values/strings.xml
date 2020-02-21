@@ -10,5 +10,6 @@
     <string name="sName">Second User Name</string>
     <string name="btnStart">START</string>
     <string name="btnEnd">End</string>
+    <string name="title">Welcome</string>
 
 </resources>

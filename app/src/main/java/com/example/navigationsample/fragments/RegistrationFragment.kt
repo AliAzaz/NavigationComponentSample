@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.navigationsample.databinding.FragmentRegistrationBinding
 import com.example.navigationsample.viewModel.MainViewModel
 import com.validatorcrawler.aliazaz.Validator
@@ -23,6 +24,10 @@ class RegistrationFragment : Fragment() {
         vModel = activity?.run {
             ViewModelProviders.of(this)[MainViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
+
+        // Get NavArguments
+        val flag: RegistrationFragmentArgs by navArgs()
+        if (flag.welcomeFlag) bi.txtHead.visibility = View.VISIBLE // getting argument data
 
     }
 

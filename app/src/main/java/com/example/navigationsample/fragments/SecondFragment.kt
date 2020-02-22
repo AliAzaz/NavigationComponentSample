@@ -41,7 +41,7 @@ class SecondFragment : Fragment() {
                 ArrayAdapter(
                     it,
                     android.R.layout.simple_list_item_1,
-                    vModel.users_chat.value?.map { dt -> if (dt.first == 1) "You:${dt.second}" else "He:${dt.second}" }
+                    vModel.usersChat.value?.map { dt -> if (dt.first == 1) "You:${dt.second}" else "He:${dt.second}" }
                         ?: listOf()
                 )
             }

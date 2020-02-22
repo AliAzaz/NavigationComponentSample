@@ -19,7 +19,11 @@ class EndChatFragment : Fragment() {
     ): View? {
 
         Handler().postDelayed({
-            findNavController().navigate(EndChatFragmentDirections.actionEndChatFragmentToRegistrationFragment())
+            findNavController().navigate(
+                EndChatFragmentDirections.actionEndChatFragmentToRegistrationFragment().setWelcomeFlag(
+                    false
+                )
+            )
         }, 2000)
 
         return inflater.inflate(R.layout.fragment_end_chat, container, false)

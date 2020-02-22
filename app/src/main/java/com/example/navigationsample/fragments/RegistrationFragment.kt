@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
@@ -13,10 +14,12 @@ import com.example.navigationsample.databinding.FragmentRegistrationBinding
 import com.example.navigationsample.viewModel.MainViewModel
 import com.validatorcrawler.aliazaz.Validator
 
+
 class RegistrationFragment : Fragment() {
 
     private lateinit var bi: FragmentRegistrationBinding
     lateinit var vModel: MainViewModel
+    private val flag: RegistrationFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +27,6 @@ class RegistrationFragment : Fragment() {
         vModel = activity?.run {
             ViewModelProviders.of(this)[MainViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
-
-        // Get NavArguments
-        val flag: RegistrationFragmentArgs by navArgs()
-        if (flag.welcomeFlag) bi.txtHead.visibility = View.VISIBLE // getting argument data
 
     }
 
@@ -50,5 +49,18 @@ class RegistrationFragment : Fragment() {
 
         // Navigation
         findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToFirstFragment())
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Get NavArguments
+        bi.txtHead.visibility =
+            if (flag.welcomeFlag) View.VISIBLE else View.GONE // getting argument data
     }
 }
